@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="entry.cpp" />
+    <ClCompile Include="menu\imgui\imgui.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\imgui\imgui_demo.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\imgui\imgui_draw.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\imgui\imgui_impl_dx11.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\imgui\imgui_tables.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\imgui\imgui_widgets.cpp">
+      <Filter>menu\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="menu\menu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="features\hooks.cpp">
+      <Filter>features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="menu">
+      <UniqueIdentifier>{6f932e67-43b1-4e88-90b5-cb7bab37ae93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="features">
+      <UniqueIdentifier>{25510442-0943-4929-894a-dcf2c763ffca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu\imgui">
+      <UniqueIdentifier>{77ea7752-7aaa-431d-a2f9-94b1f626ef17}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="menu\imgui\imstb_truetype.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imgui.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imgui_impl_dx11.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imgui_internal.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imstb_rectpack.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imstb_textedit.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\imgui\imconfig.h">
+      <Filter>menu\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="menu\menu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="features\hooks.h">
+      <Filter>features</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
