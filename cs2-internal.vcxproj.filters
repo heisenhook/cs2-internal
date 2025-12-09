@@ -23,9 +23,8 @@
     <ClCompile Include="menu\menu.cpp">
       <Filter>menu</Filter>
     </ClCompile>
-    <ClCompile Include="features\hooks.cpp">
-      <Filter>features</Filter>
-    </ClCompile>
+    <ClCompile Include="core\hack.cpp" />
+    <ClCompile Include="core\interfaces.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="menu">
@@ -63,8 +62,13 @@
     <ClInclude Include="menu\menu.h">
       <Filter>menu</Filter>
     </ClInclude>
-    <ClInclude Include="features\hooks.h">
-      <Filter>features</Filter>
-    </ClInclude>
+    <ClInclude Include="core\hack.h" />
+    <ClInclude Include="core\interfaces.h" />
+    <ClInclude Include="sdk\util\pe64.h" />
+    <ClInclude Include="sdk\util\memory.h" />
+    <ClInclude Include="sdk\util\util.h" />
+    <ClInclude Include="sdk\util\hash.h" />
+    <ClInclude Include="sdk\util\defines.h" />
+    <ClInclude Include="sdk\util\hook.h" />
   </ItemGroup>
 </Project>
