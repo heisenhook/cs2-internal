@@ -2,6 +2,19 @@
 #include <Windows.h>
 
 #include "core/hack.h"
+#include <thread>
+
+DWORD WINAPI ThreadProc(LPVOID lpParameter) {
+    gHack.init();
+
+    while (!GetAsyncKeyState(VK_END)) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+
+    gHack.exit();
+
+    FreeLibraryAndExitThread(static_cast<HMODULE>(lpParameter), EXIT_SUCCESS);
+}
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -11,13 +24,16 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     switch (ul_reason_for_call)
     {
     case DLL_PROCESS_ATTACH:
-        gHack.init();
-        break;
-    case DLL_THREAD_ATTACH:
-    case DLL_THREAD_DETACH:
-    case DLL_PROCESS_DETACH:
-        gHack.exit();
+        HANDLE Thread = CreateThread(
+            nullptr,
+            NULL,
+            ThreadProc,
+            hModule,
+            NULL,
+            nullptr
+        );
         break;
     }
+
     return TRUE;
 }

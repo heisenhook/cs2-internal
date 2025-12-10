@@ -35,6 +35,8 @@ void Interfaces::init() {
 			i->pRegister = pRegister;
 #endif
 			m->vInterfaces.push_back(i);
+
+			pRegister = pRegister->pNext;
 		}
 	}
 }

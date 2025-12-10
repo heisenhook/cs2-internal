@@ -10,38 +10,33 @@ public:
 	bool hooked;
 public:
 	bool detour(void* target, void* detour) {
-		{
-			if (!target || !detour) {
-				return false;
-			}
-
-			this->pTarget = target;
-			this->pDetour = detour;
-
-			MH_STATUS status = MH_CreateHook(target, detour, &pOriginal);
-			if (status != MH_OK) {
-				return false;
-			}
+		if (!target || !detour) {
+			return false;
 		}
 
-		{
-			if (hooked)
-				return false;
+		if (hooked)
+			return true;
 
-			MH_STATUS status = MH_EnableHook(pTarget);
-			if (status != MH_OK) {
-				return false;
-			}
+		this->pTarget = target;
+		this->pDetour = detour;
 
-			hooked = true;
+		MH_STATUS status = MH_CreateHook(target, detour, &pOriginal);
+		if (status != MH_OK) {
+			return false;
 		}
 
+		status = MH_EnableHook(pTarget);
+		if (status != MH_OK) {
+			return false;
+		}
+
+		hooked = true;
 		return true;
 	}
 
 	bool restore() {
 		if (!hooked)
-			return false;
+			return true;
 
 		MH_STATUS status = MH_DisableHook(pTarget);
 		if (status != MH_OK) {
